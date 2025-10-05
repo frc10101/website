@@ -1,0 +1,1257 @@
+/* Reset and base styles */
+:root {
+    --primary-cyan: #00c1c1;
+    --primary-yellow: #fbca13;
+    --primary-red: #f10101;
+    --primary-black: #000000;
+    --comic-white: #ffffff;
+    --comic-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Import Google Fonts */
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--primary-black);
+    background-color: var(--primary-cyan);
+    background-image: 
+        radial-gradient(circle at 25% 25%, var(--primary-yellow) 2px, transparent 2px),
+        radial-gradient(circle at 75% 75%, var(--primary-red) 1px, transparent 1px);
+    background-size: 50px 50px, 30px 30px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header and Navigation */
+.header {
+    background-color: var(--primary-black);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-yellow);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-yellow);
+}
+
+/* Scrolled header styles */
+.header.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.header.scrolled .nav-link {
+    color: var(--primary-black);
+}
+
+.header.scrolled .nav-link:hover {
+    color: var(--primary-cyan);
+}
+
+.header.scrolled .nav-logo h1 {
+    color: var(--primary-red);
+}
+
+.header.scrolled .hamburger .bar {
+    background-color: var(--primary-black);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-yellow);
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Welcome Section */
+.welcome-section {
+    padding: 100px 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/teamPhoto.png');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    color: white;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+.welcome-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    align-items: center;
+    min-height: 400px;
+    flex-wrap: nowrap;
+}
+
+.welcome-content {
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 50%;
+}
+
+.welcome-image {
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+}
+
+.welcome-image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Force side-by-side layout on larger screens */
+@media screen and (min-width: 481px) {
+    .welcome-container {
+        flex-direction: row !important;
+    }
+}
+
+@media screen and (max-width: 968px) {
+    .welcome-container {
+        gap: 2rem;
+    }
+}
+
+.welcome-title {
+    font-family: 'Bangers', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+
+.highlight {
+    color: var(--primary-yellow);
+}
+
+.welcome-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+    opacity: 0.95;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.welcome-buttons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.btn {
+    padding: 15px 30px;
+    border: 3px solid var(--primary-black);
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    letter-spacing: 1px;
+    transform: rotate(-1deg);
+}
+
+.btn:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.btn-primary {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+    box-shadow: 4px 4px 0 var(--primary-red);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-red);
+    color: var(--comic-white);
+    box-shadow: 6px 6px 0 var(--primary-cyan);
+}
+
+.btn-secondary {
+    background-color: var(--comic-white);
+    color: var(--primary-red);
+    box-shadow: 4px 4px 0 var(--primary-cyan);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-cyan);
+    color: var(--primary-black);
+    box-shadow: 6px 6px 0 var(--primary-yellow);
+}
+
+.image-placeholder {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.robot-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Section Dividers - Simple White Line */
+.section-divider {
+    height: 1px;
+    background-color: white;
+    margin: 0;
+    border: none;
+}
+
+
+
+/* Comic Book Panels */
+.comic-panel {
+    background: var(--comic-white);
+    border: 4px solid var(--primary-black);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px 0;
+    box-shadow: 8px 8px 0 var(--comic-shadow);
+    position: relative;
+    transform: rotate(-1deg);
+    transition: transform 0.3s ease;
+}
+
+.comic-panel:nth-child(even) {
+    transform: rotate(1deg);
+}
+
+.comic-panel:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+/* Comic Speech Bubbles */
+.speech-bubble {
+    background: var(--comic-white);
+    border: 3px solid var(--primary-black);
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    margin: 20px 0;
+    box-shadow: 5px 5px 0 var(--comic-shadow);
+}
+
+.speech-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 30px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid var(--primary-black);
+}
+
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 32px;
+    width: 0;
+    height: 0;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    border-top: 13px solid var(--comic-white);
+}
+
+/* Sections */
+.about, .robot-showcase, .team-section, .achievements, .contact {
+    padding: 100px 0;
+}
+
+.about {
+    background-color: var(--primary-cyan);
+    color: var(--primary-black);
+}
+
+.robot-showcase {
+    background-color: var(--primary-cyan);
+    color: var(--primary-black);
+}
+
+.team-section {
+    background-color: var(--primary-cyan);
+    color: var(--primary-black);
+}
+
+.achievements {
+    background-color: var(--primary-cyan);
+    color: var(--primary-black);
+    padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.achievements::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 80%, transparent 20%, var(--primary-yellow) 20.5%, var(--primary-yellow) 21%, transparent 21.5%),
+        radial-gradient(circle at 80% 20%, transparent 20%, var(--primary-red) 20.5%, var(--primary-red) 21%, transparent 21.5%),
+        radial-gradient(circle at 40% 40%, transparent 20%, var(--comic-white) 20.5%, var(--comic-white) 21%, transparent 21.5%);
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.achievements .container {
+    position: relative;
+    z-index: 2;
+}
+
+.contact {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+    padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 70% 30%, transparent 15%, var(--primary-cyan) 15.5%, var(--primary-cyan) 16%, transparent 16.5%),
+        radial-gradient(circle at 30% 70%, transparent 15%, var(--primary-red) 15.5%, var(--primary-red) 16%, transparent 16.5%);
+    opacity: 0.08;
+    z-index: 1;
+}
+
+.contact .container {
+    position: relative;
+    z-index: 2;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-family: 'Bangers', sans-serif;
+    font-size: 4rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary-black);
+    transform: rotate(-2deg);
+    letter-spacing: 1px;
+}
+
+.section-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3rem;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    color: var(--primary-black);
+    line-height: 1.7;
+    font-weight: 600;
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 4rem;
+}
+
+.feature-card {
+    background-color: var(--comic-white);
+    padding: 2.5rem;
+    border: 4px solid var(--primary-black);
+    border-radius: 20px;
+    box-shadow: 8px 8px 0 var(--primary-yellow);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    transform: rotate(-1deg);
+}
+
+.feature-card:nth-child(even) {
+    transform: rotate(1deg);
+    box-shadow: 8px 8px 0 var(--primary-red);
+}
+
+.feature-card:hover {
+    transform: rotate(0deg) translateY(-10px);
+    box-shadow: 12px 12px 0 var(--primary-cyan);
+}
+
+.feature-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    filter: drop-shadow(3px 3px 0 var(--comic-shadow));
+}
+
+.feature-card h3 {
+    font-family: 'Bangers', sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: var(--primary-black);
+    letter-spacing: 1px;
+}
+
+.feature-card p {
+    font-family: 'Roboto', sans-serif;
+    color: var(--primary-black);
+    line-height: 1.7;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+/* Robot Showcase */
+.robot-showcase .section-title {
+    color: var(--primary-black);
+}
+
+.robot-showcase .section-description {
+    color: var(--primary-black);
+}
+
+.robot-feature {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.robot-content h3 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--primary-black);
+}
+
+.robot-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--primary-black);
+    line-height: 1.7;
+}
+
+.robot-specs {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.spec-item {
+    padding: 1.5rem;
+    background-color: var(--primary-yellow);
+    border-radius: 12px;
+    border-left: 6px solid var(--primary-red);
+    transition: transform 0.2s ease;
+}
+
+.spec-item:hover {
+    transform: translateX(5px);
+}
+
+.spec-item h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--primary-black);
+}
+
+.spec-item p {
+    margin: 0;
+    color: var(--primary-black);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.robot-visual .image-placeholder {
+    background-color: var(--primary-yellow);
+    border: 2px dashed var(--primary-black);
+    color: var(--primary-black);
+    height: 350px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.robot-showcase-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center 20%;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Team Stats */
+.team-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5rem;
+    margin: 4rem 0;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 2.5rem;
+    background-color: var(--comic-white);
+    border: 4px solid var(--primary-black);
+    border-radius: 20px;
+    box-shadow: 8px 8px 0 var(--primary-red);
+    transition: transform 0.3s ease;
+    position: relative;
+    transform: rotate(-2deg);
+}
+
+.stat-card:nth-child(even) {
+    transform: rotate(2deg);
+    box-shadow: 8px 8px 0 var(--primary-yellow);
+}
+
+.stat-card:hover {
+    transform: rotate(0deg) scale(1.1);
+}
+
+.stat-number {
+    font-family: 'Bangers', sans-serif;
+    font-size: 4rem;
+    font-weight: 400;
+    color: var(--primary-red);
+    margin-bottom: 1rem;
+    display: block;
+    letter-spacing: 1px;
+}
+
+.stat-label {
+    font-size: 1.2rem;
+    color: var(--primary-black);
+    font-weight: 700;
+}
+
+/* Team Tabs */
+.team-tabs {
+    margin-top: 4rem;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.tab-button {
+    background-color: transparent;
+    border: 3px solid var(--primary-black);
+    color: var(--primary-black);
+    font-family: 'Bangers', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tab-button:hover {
+    background-color: var(--primary-cyan);
+    border-color: var(--primary-cyan);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.tab-button.active {
+    background-color: var(--primary-cyan);
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 193, 193, 0.3);
+}
+
+.tab-content {
+    position: relative;
+}
+
+.tab-panel {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Team Members */
+.team-subsection-title {
+    font-family: 'Bangers', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-align: center;
+    margin: 3rem 0 2rem 0;
+    color: var(--primary-red);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.team-subsection-title:first-of-type {
+    margin-top: 4rem;
+}
+
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.member-card {
+    background-color: var(--primary-yellow);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    border: 3px solid var(--primary-red);
+}
+
+.member-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Mentor cards have a different color scheme */
+.mentor-card {
+    background-color: white;
+    border: 3px solid var(--primary-cyan);
+}
+
+.mentor-card .member-name {
+    color: var(--primary-red);
+}
+
+.mentor-card .member-role {
+    color: var(--primary-cyan);
+}
+
+.mentor-card .member-description {
+    color: var(--primary-black);
+}
+
+.member-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.member-card:hover .member-image img {
+    transform: scale(1.05);
+}
+
+.member-info {
+    padding: 2rem;
+}
+
+.member-name {
+    font-family: 'Bangers', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: var(--primary-black);
+}
+
+.member-role {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-red);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.member-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--primary-black);
+}
+
+.role-card h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--primary-black);
+}
+
+.role-card p {
+    color: var(--primary-black);
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+/* Achievements */
+.achievements .section-title {
+    color: var(--primary-black);
+}
+
+.achievements .section-description {
+    color: var(--primary-black);
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 4rem;
+}
+
+.achievement-card {
+    background-color: var(--comic-white);
+    border: 4px solid var(--primary-black);
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 6px 6px 0 var(--primary-yellow);
+    position: relative;
+    transform: rotate(2deg);
+}
+
+.achievement-card:nth-child(even) {
+    transform: rotate(-2deg);
+    box-shadow: 6px 6px 0 var(--primary-red);
+}
+
+.achievement-card::before {
+    content: '🏆';
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    font-size: 2rem;
+    background: var(--primary-yellow);
+    border: 3px solid var(--primary-black);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 3px 3px 0 var(--primary-black);
+}
+
+.achievement-card:hover {
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 8px 8px 0 var(--primary-cyan);
+}
+
+.achievement-year {
+    display: inline-block;
+    background-color: var(--primary-red);
+    color: var(--comic-white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    border: 3px solid var(--primary-black);
+    letter-spacing: 1px;
+}
+
+.achievement-card:hover .achievement-year {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+    transform: scale(1.1);
+}
+
+.achievement-card h4 {
+    font-family: 'Bangers', sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: var(--primary-red);
+    transition: color 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.achievement-card:hover h4 {
+    color: var(--primary-cyan);
+}
+
+.achievement-card p {
+    font-family: 'Roboto', sans-serif;
+    color: var(--primary-black);
+    line-height: 1.7;
+    transition: color 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Contact Info */
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+    padding-top: 4rem;
+    border-top: 3px solid var(--primary-black);
+}
+
+.contact-item {
+    text-align: center;
+    padding: 2.5rem;
+    background-color: var(--comic-white);
+    border-radius: 20px;
+    border: 4px solid var(--primary-black);
+    box-shadow: 6px 6px 0 var(--primary-cyan);
+    position: relative;
+    transform: rotate(1deg);
+    transition: transform 0.3s ease;
+}
+
+.contact-item:nth-child(even) {
+    transform: rotate(-1deg);
+    box-shadow: 6px 6px 0 var(--primary-red);
+}
+
+.contact-item:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.contact-item::before {
+    content: '📧';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    background: var(--primary-yellow);
+    border: 3px solid var(--primary-black);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 3px 3px 0 var(--primary-black);
+}
+
+.contact-item:nth-child(2)::before {
+    content: '📍';
+}
+
+.contact-item:nth-child(3)::before {
+    content: '🤖';
+}
+
+.contact-item h4 {
+    font-family: 'Bangers', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: var(--primary-red);
+    letter-spacing: 1px;
+    margin-top: 1rem;
+}
+
+.contact-item p {
+    font-family: 'Roboto', sans-serif;
+    color: var(--primary-black);
+    line-height: 1.8;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    padding: 3rem;
+    background-color: var(--comic-white);
+    border-radius: 20px;
+    border: 4px solid var(--primary-black);
+    box-shadow: 8px 8px 0 var(--primary-red);
+    position: relative;
+    transform: rotate(-1deg);
+}
+
+.contact-form::before {
+    content: 'CONTACT US!';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%) rotate(3deg);
+    background: var(--primary-cyan);
+    color: var(--primary-black);
+    padding: 10px 20px;
+    border: 3px solid var(--primary-black);
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    box-shadow: 3px 3px 0 var(--primary-black);
+    letter-spacing: 1px;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: var(--primary-red);
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    padding: 15px;
+    border: 3px solid var(--primary-black);
+    border-radius: 15px;
+    font-size: 1.05rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    background-color: var(--comic-white);
+    font-weight: 500;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-cyan);
+    box-shadow: 4px 4px 0 var(--primary-yellow);
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 1rem;
+    color: var(--primary-black);
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: var(--primary-black);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--primary-red);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sponsors p {
+    margin-bottom: 0.5rem;
+    color: var(--primary-black);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--primary-black);
+    padding-top: 2rem;
+    text-align: center;
+    color: var(--primary-black);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--primary-black);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.3);
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .welcome-container {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 2rem;
+        padding: 0 15px;
+    }
+    
+    .welcome-content, .welcome-image {
+        flex: none !important;
+        max-width: 100% !important;
+    }
+
+    .welcome-title {
+        font-size: 2.8rem;
+    }
+
+    .welcome-description {
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .welcome-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .robot-feature {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .features-grid, .team-stats, .team-members, .achievements-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .tab-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .tab-button {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .section-description {
+        font-size: 1.1rem;
+        margin-bottom: 3rem;
+    }
+
+    .about, .robot-showcase, .team-section, .achievements, .contact {
+        padding: 60px 0;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .contact-form {
+        margin: 0 15px 3rem;
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .welcome-title {
+        font-size: 2.2rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .welcome-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 15px 20px;
+        font-size: 1.1rem;
+    }
+
+    .feature-card, .stat-card, .role-card, .achievement-card {
+        padding: 2rem;
+    }
+
+    .stat-number {
+        font-size: 2.8rem;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .about, .robot-showcase, .team-section, .achievements, .contact {
+        padding: 40px 0;
+    }
+
+    .welcome-section {
+        padding: 60px 0;
+        min-height: 70vh;
+    }
+}
