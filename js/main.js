@@ -11,6 +11,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Close mobile menu when clicking on a nav link
         document.querySelectorAll('.nav-link').forEach(link => {
+
+    // Innovation cards toggle on click
+    const innovationCards = document.querySelectorAll('.innovation-card');
+    if (innovationCards.length > 0) {
+            const setExpandedState = (expanded) => {
+                innovationCards.forEach(card => {
+                    card.classList.toggle('expanded', expanded);
+                    card.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+                });
+            };
+
+            let allExpanded = false;
+
+            innovationCards.forEach(card => {
+                const handleToggle = (event) => {
+                    if (event && event.type === 'click' && event.target.closest('a, button')) {
+                        return;
+                    }
+
+                    allExpanded = !allExpanded;
+                    setExpandedState(allExpanded);
+                };
+
+                card.addEventListener('click', handleToggle);
+
+                card.addEventListener('keydown', event => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        handleToggle();
+                    }
+                });
+            });
+    }
             link.addEventListener('click', function() {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
@@ -42,11 +75,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const formData = new FormData(contactForm);
             const name = formData.get('name');
             const email = formData.get('email');
-            const grade = formData.get('grade');
-            const interests = formData.get('interests');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
 
             // Basic validation
-            if (!name || !email || !grade || !interests) {
+            if (!name || !email || !subject || !message) {
                 showNotification('Please fill in all fields.', 'error');
                 return;
             }
@@ -57,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             // Simulate form submission
-            showNotification('Thank you for your interest! We\'ll contact you soon about joining the team.', 'success');
+            showNotification('Thanks for reaching out! We\'ll be in touch soon.', 'success');
             contactForm.reset();
         });
     }

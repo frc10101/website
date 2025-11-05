@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
@@ -34,6 +33,9 @@
                         <a href="#achievements" class="nav-link">Achievements</a>
                     </li>
                     <li class="nav-item">
+                        <a href="#sponsors" class="nav-link">Sponsors</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="#contact" class="nav-link">Contact</a>
                     </li>
                 </ul>
@@ -48,6 +50,11 @@
 
     <main>
         <section id="home" class="welcome-section">
+            <div class="welcome-overlay" aria-hidden="true">
+                <div class="welcome-overlay-content">
+                    <span class="overlay-number">10101</span>
+                </div>
+            </div>
             <div class="welcome-container">
                 <div class="welcome-content">
                     <h1 class="welcome-title">Welcome to <span class="highlight">Critical Hit</span></h1>
@@ -92,14 +99,56 @@
                         <p>We compete in regional and national FRC competitions, striving for excellence in every match.</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">�</div>
+                        <div class="feature-icon">📚</div>
                         <h3>STEM Education</h3>
                         <p>We promote STEM learning through outreach programs and educational initiatives in our community.</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">�</div>
+                        <div class="feature-icon">💡</div>
                         <h3>Innovation</h3>
                         <p>We constantly push the boundaries of what's possible with creative engineering solutions.</p>
+                    </div>
+                    <div class="feature-card innovation-card" tabindex="0" role="button" aria-expanded="false" aria-controls="burnout-details">
+                        <div class="feature-icon">🧯</div>
+                        <h3>Decreasing Burnout</h3>
+                        <p class="feature-summary">Keeping students and mentors energized with support that meets them where they are.</p>
+                        <div class="feature-details" id="burnout-details">
+                            <h4>Initiatives</h4>
+                            <ul>
+                                <li>FLL Kick-off events across Alabama</li>
+                                <li>Virtual mentorship sessions and office hours</li>
+                                <li>FIRST mentor network for peer to peer support</li>
+                                <li>In-person mentorship for easier troubleshooting</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="feature-card innovation-card" tabindex="0" role="button" aria-expanded="false" aria-controls="events-details">
+                        <div class="feature-icon">🎟️</div>
+                        <h3>Improving Events</h3>
+                        <p class="feature-summary">Designing inclusive competitions so every team can focus on doing their best work.</p>
+                        <div class="feature-details" id="events-details">
+                            <h4>Initiatives</h4>
+                            <ul>
+                                <li>Quiet rooms for both FLL and FTC teams</li>
+                                <li>On-site help desks staffed for FTC and FLL</li>
+                                <li>Team social and Fun Squad support</li>
+                                <li>Champion pit booths that set every team up for success</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="feature-card innovation-card" tabindex="0" role="button" aria-expanded="false" aria-controls="growing-details">
+                        <div class="feature-icon">🌱</div>
+                        <h3>Growing FIRST</h3>
+                        <p class="feature-summary">Scaling access to robotics experiences for new teams and underserved communities.</p>
+                        <div class="feature-details" id="growing-details">
+                            <h4>Initiatives</h4>
+                            <ul>
+                                <li>laptops for rookie teams through Alabama Jumpstart</li>
+                                <li>Progression of programs that follow students year after year</li>
+                                <li>Camps in underserved areas and local recreation centers</li>
+                                <li>FLL Explore Dreamlabs Center to spark early curiosity</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -112,16 +161,16 @@
                 <h2 class="section-title">Meet Our Robot</h2>
                 <div class="robot-feature">
                     <div class="robot-content">
-                        <h3>Whoops E Daisy</h3>
-                        <p>Meet our latest competition robot, designed and built for the 2024 FRC season. This robot showcases our team's engineering prowess and innovative problem-solving abilities.</p>
+                        <h3>Whoops Y Daisy</h3>
+                        <p>Meet our latest competition robot, designed and built for the 2024 FRC season. Whoops Y Daisy highlights our team's engineering prowess with a brand-new funnel stage that keeps chorals flowing to the scorer.</p>
                         <div class="robot-specs">
                             <div class="spec-item">
                                 <h4>Whoops - Our Swerve Drivetrain</h4>
                                 <p>Swerve drive for maximum maneuverability</p>
                             </div>
                             <div class="spec-item">
-                                <h4>E - Our Elevator</h4>
-                                <p>Able to move Daisy to score at L1, L2, and L3 levels</p>
+                                <h4>Y - Our Funnel</h4>
+                                <p>Guides chorals into Daisy, staging them for consistent scoring runs</p>
                             </div>
                             <div class="spec-item">
                                 <h4>Daisy - Our End Effector</h4>
@@ -130,7 +179,7 @@
                         </div>
                     </div>
                     <div class="robot-visual">
-                        <img src="images/robot.png" alt="Whoops E Daisy Robot" class="robot-showcase-image">
+                        <img src="images/robot.png" alt="Whoops Y Daisy Robot" class="robot-showcase-image">
                     </div>
                 </div>
             </div>
@@ -443,35 +492,61 @@
 
         <div class="section-divider"></div>
 
+        <section id="sponsors" class="sponsors-section">
+            <div class="container">
+                <h2 class="section-title">Our Sponsors</h2>
+                <p class="section-description">We’re grateful for the organizations that power Critical Hit Robotics and help us inspire future STEM leaders.</p>
+
+                <div class="sponsors-grid">
+                    <article class="sponsor-card">
+                        <h3 class="sponsor-name">DOD-STEM</h3>
+                        <p class="sponsor-support">Supporting national STEM talent development through strategic education initiatives.</p>
+                    </article>
+                    <article class="sponsor-card">
+                        <h3 class="sponsor-name">Leidos</h3>
+                        <p class="sponsor-support">Advancing technology and engineering with a focus on innovation and community impact.</p>
+                    </article>
+                    <article class="sponsor-card">
+                        <h3 class="sponsor-name">Lockheed Martin</h3>
+                        <p class="sponsor-support">Championing aerospace innovation and investing in hands-on STEM experiences.</p>
+                    </article>
+                    <article class="sponsor-card">
+                        <h3 class="sponsor-name">PPG Foundation</h3>
+                        <p class="sponsor-support">Empowering students with resources that spark creativity in science and technology.</p>
+                    </article>
+                    <article class="sponsor-card">
+                        <h3 class="sponsor-name">Boeing</h3>
+                        <p class="sponsor-support">Fueling the next generation of engineers through mentorship and STEM funding.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
         <section id="contact" class="contact">
             <div class="container">
-                <h2 class="section-title">Join Our Team</h2>
-                <p class="section-description">Interested in joining Critical Hit? We welcome students passionate about STEM, robotics, and making a difference!</p>
-                
+                <h2 class="section-title">Reach Out to Us</h2>
+                <p class="section-description">Questions, partnership ideas, or just want to say hi? Drop us a message and our team will get back to you.</p>
+
                 <form class="contact-form">
                     <div class="form-group">
                         <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
                     </div>
                     <div class="form-group">
-                        <label for="grade">Grade Level</label>
-                        <select id="grade" name="grade" required>
-                            <option value="">Select Grade</option>
-                            <option value="9">9th Grade</option>
-                            <option value="10">10th Grade</option>
-                            <option value="11">11th Grade</option>
-                            <option value="12">12th Grade</option>
-                        </select>
+                        <label for="subject">How can we help?</label>
+                        <input type="text" id="subject" name="subject" placeholder="Sponsorship, volunteering, media inquiry, etc." required>
                     </div>
                     <div class="form-group">
-                        <label for="interests">Areas of Interest</label>
-                        <textarea id="interests" name="interests" rows="4" placeholder="Tell us about your interests in robotics, programming, mechanical design, etc." required></textarea>
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us how we can support your robotics journey." required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit Application</button>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
 
                 <div class="contact-info">
@@ -486,7 +561,7 @@
                     </div>
                     <div class="contact-item">
                         <h4>Contact</h4>
-                        <p>Email: info@crithitrobotics.com</p>
+                        <p>Email: info@crithitrobotics.org</p>
                     </div>
                 </div>
             </div>
@@ -523,9 +598,13 @@
                 <div class="footer-section">
                     <h4>Partners</h4>
                     <div class="sponsors">
-                        <p>FIRST Robotics Competition</p>
-                        <p>Local School District</p>
-                        <p>Community Sponsors</p>
+                        <ul>
+                            <li><a href="https://dodstem.us" target="_blank" rel="noopener" aria-label="DOD-STEM">DOD-STEM</a></li>
+                            <li><a href="https://www.leidos.com" target="_blank" rel="noopener" aria-label="Leidos">Leidos</a></li>
+                            <li><a href="https://www.lockheedmartin.com" target="_blank" rel="noopener" aria-label="Lockheed Martin">Lockheed Martin</a></li>
+                            <li><a href="https://www.ppg.com/en-US/community-impact" target="_blank" rel="noopener" aria-label="PPG Foundation">PPG Foundation</a></li>
+                            <li><a href="https://www.boeing.com" target="_blank" rel="noopener" aria-label="Boeing">Boeing</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
