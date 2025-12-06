@@ -11,21 +11,6 @@ A modern, responsive website for CritHit Robotics - an FRC (FIRST Robotics Compe
 - **Accessibility Focused**: Semantic HTML and keyboard-friendly navigation
 - **FRC Focused**: Specifically designed for robotics teams with relevant sections and content
 
-## 📁 Project Structure
-
-```
-CritHit_Website/
-├── index.html          # Main HTML file
-├── css/
-│   └── styles.css      # Main stylesheet
-├── js/
-│   └── main.js         # JavaScript functionality
-├── images/             # Image assets (placeholder folder)
-├── .github/
-│   └── copilot-instructions.md
-└── README.md
-```
-
 ## 🛠️ Technologies Used
 
 - **HTML5**: Semantic markup and modern web standards
@@ -59,7 +44,6 @@ Simply open `index.html` in any modern web browser to view the website.
 - Sticky header with scroll effects
 
 ### Sections
-- **Hero**: Eye-catching landing section with robotics team branding
 - **About**: Overview of the robotics team with core values and focus areas
 - **Our Robot**: Showcase of the current competition robot with specifications
 - **Team**: Team member information, roles, and statistics
@@ -142,5 +126,3 @@ This project is open source and available under the [MIT License](LICENSE).
 For questions or feedback about this project, please use the contact form on the website or reach out through the social links provided.
 
 ---
-
-Built with ❤️ for the gaming community
