@@ -12,37 +12,27 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close mobile menu when clicking on a nav link
         document.querySelectorAll('.nav-link').forEach(link => {
 
-    // Innovation cards toggle on click
+    // Innovation cards toggle on hover
     const innovationCards = document.querySelectorAll('.innovation-card');
     if (innovationCards.length > 0) {
-            const setExpandedState = (expanded) => {
-                innovationCards.forEach(card => {
-                    card.classList.toggle('expanded', expanded);
-                    card.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-                });
-            };
-
-            let allExpanded = false;
-
+        const expandAllCards = () => {
             innovationCards.forEach(card => {
-                const handleToggle = (event) => {
-                    if (event && event.type === 'click' && event.target.closest('a, button')) {
-                        return;
-                    }
-
-                    allExpanded = !allExpanded;
-                    setExpandedState(allExpanded);
-                };
-
-                card.addEventListener('click', handleToggle);
-
-                card.addEventListener('keydown', event => {
-                    if (event.key === 'Enter' || event.key === ' ') {
-                        event.preventDefault();
-                        handleToggle();
-                    }
-                });
+                card.classList.add('expanded');
+                card.setAttribute('aria-expanded', 'true');
             });
+        };
+
+        const collapseAllCards = () => {
+            innovationCards.forEach(card => {
+                card.classList.remove('expanded');
+                card.setAttribute('aria-expanded', 'false');
+            });
+        };
+
+        innovationCards.forEach(card => {
+            card.addEventListener('mouseenter', expandAllCards);
+            card.addEventListener('mouseleave', collapseAllCards);
+        });
     }
             link.addEventListener('click', function() {
                 hamburger.classList.remove('active');

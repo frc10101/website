@@ -542,7 +542,7 @@ img {
     opacity: 0;
     visibility: hidden;
     overflow: hidden;
-    transition: max-height 0.4s ease, opacity 0.3s ease;
+    transition: max-height 0.8s ease, opacity 0.7s ease;
 }
 
 .innovation-card .feature-details h4 {
@@ -559,6 +559,57 @@ img {
     margin-left: 1.25rem;
     display: grid;
     gap: 0.35rem;
+}
+
+.innovation-card .feature-details ul li {
+    opacity: 0;
+    animation: slideInListItem 0.4s ease forwards;
+}
+
+.innovation-card .feature-details ul li:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.innovation-card .feature-details ul li:nth-child(2) {
+    animation-delay: 0.35s;
+}
+
+.innovation-card .feature-details ul li:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.innovation-card .feature-details ul li:nth-child(4) {
+    animation-delay: 0.65s;
+}
+
+.innovation-card:not(.expanded) .feature-details ul li {
+    animation: none;
+    opacity: 0;
+}
+
+@keyframes slideInListItem {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hover-hint {
+    font-size: 0.85rem;
+    color: rgba(0, 0, 0, 0.5);
+    margin-top: 1rem;
+    font-style: italic;
+    opacity: 1;
+    transition: opacity 0.8s ease;
+}
+
+.innovation-card.expanded .hover-hint {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .innovation-card.expanded .feature-details {
