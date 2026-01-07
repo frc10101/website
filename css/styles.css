@@ -1129,6 +1129,39 @@ img {
     margin: 0;
 }
 
+/* Camps Card */
+.camps-card {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    background-color: var(--surface);
+    border-radius: var(--radius-large);
+    border: 1px solid var(--border-soft);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.camps-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.camps-card .flyer-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.camps-signup {
+    text-align: center;
+    margin: 0 auto 4rem;
+}
+
+.camps-signup .btn {
+    font-size: 1.1rem;
+    padding: 16px 36px;
+}
+
 /* Contact Info */
 .contact-info {
     display: grid;

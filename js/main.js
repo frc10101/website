@@ -271,3 +271,27 @@ function lazyLoadImages() {
 
 // Call lazy loading when DOM is ready
 document.addEventListener('DOMContentLoaded', lazyLoadImages);
+
+// Image fallback for member cards
+document.addEventListener('DOMContentLoaded', function() {
+    const memberImages = document.querySelectorAll('.member-card .member-image img');
+    memberImages.forEach(img => {
+        // Set the error handler
+        img.onerror = function() {
+            // Only set fallback if not already using it
+            if (!this.src.includes('CriticalHit.png')) {
+                this.onerror = null; // Prevent infinite loop if fallback also fails
+                this.src = 'images/CriticalHit.png';
+                this.alt = 'Critical Hit Robotics';
+            }
+        };
+        
+        // Check if image already failed to load
+        if (!img.complete || img.naturalWidth === 0) {
+            // Try to reload, which will trigger onerror if it fails
+            const src = img.src;
+            img.src = '';
+            img.src = src;
+        }
+    });
+});
