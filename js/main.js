@@ -12,13 +12,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close mobile menu when clicking on a nav link
         document.querySelectorAll('.nav-link').forEach(link => {
 
-    // Innovation cards toggle on hover
+    // Innovation cards use hover on desktop and tap on touch devices
     const innovationCards = document.querySelectorAll('.innovation-card');
     if (innovationCards.length > 0) {
-        const expandAllCards = () => {
+        const isTouchDevice = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+
+        const expandCard = (targetCard) => {
             innovationCards.forEach(card => {
-                card.classList.add('expanded');
-                card.setAttribute('aria-expanded', 'true');
+                const isTarget = card === targetCard;
+                card.classList.toggle('expanded', isTarget);
+                card.setAttribute('aria-expanded', isTarget ? 'true' : 'false');
             });
         };
 
@@ -30,8 +33,32 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         innovationCards.forEach(card => {
-            card.addEventListener('mouseenter', expandAllCards);
-            card.addEventListener('mouseleave', collapseAllCards);
+            card.setAttribute('aria-expanded', 'false');
+
+            if (isTouchDevice) {
+                card.addEventListener('click', function() {
+                    const shouldExpand = !this.classList.contains('expanded');
+                    if (shouldExpand) {
+                        expandCard(this);
+                    } else {
+                        collapseAllCards();
+                    }
+                });
+            } else {
+                card.addEventListener('mouseenter', () => {
+                    innovationCards.forEach(currentCard => {
+                        currentCard.classList.add('expanded');
+                        currentCard.setAttribute('aria-expanded', 'true');
+                    });
+                });
+                card.addEventListener('mouseleave', collapseAllCards);
+            }
+        });
+
+        document.querySelectorAll('.hover-hint').forEach(hint => {
+            if (isTouchDevice) {
+                hint.textContent = 'Tap the card to expand';
+            }
         });
     }
             link.addEventListener('click', function() {
@@ -105,6 +132,41 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    const robotCards = document.querySelectorAll('.robot-card');
+    const robotPanels = document.querySelectorAll('.robot-panel');
+
+    if (robotCards.length > 0 && robotPanels.length > 0) {
+        const activateRobotPanel = (targetId) => {
+            robotCards.forEach(card => {
+                const isActive = card.getAttribute('data-robot-target') === targetId;
+                card.classList.toggle('active', isActive);
+                card.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            });
+
+            robotPanels.forEach(panel => {
+                panel.classList.toggle('active', panel.id === targetId);
+            });
+        };
+
+        robotCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const targetId = this.getAttribute('data-robot-target');
+                if (targetId) {
+                    activateRobotPanel(targetId);
+                    this.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
+            });
+        });
+
+        const defaultRobotCard = document.querySelector('.robot-card.active') || robotCards[0];
+        if (defaultRobotCard) {
+            const defaultTargetId = defaultRobotCard.getAttribute('data-robot-target');
+            if (defaultTargetId) {
+                activateRobotPanel(defaultTargetId);
+            }
+        }
+    }
+
     // Add scroll-based header styling
     window.addEventListener('scroll', function() {
         const header = document.querySelector('.header');
@@ -133,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe feature cards and new sections for animation
-    document.querySelectorAll('.feature-card, .robot-feature, .stat-card, .role-card, .achievement-card').forEach(card => {
+    document.querySelectorAll('.feature-card, .robot-card, .robot-feature, .stat-card, .role-card, .achievement-card').forEach(card => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';
         card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
