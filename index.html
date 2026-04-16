@@ -35,9 +35,6 @@
                     <li class="nav-item">
                         <a href="#sponsors" class="nav-link">Sponsors</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">Camps</a>
-                    </li>
                 </ul>
                 <div class="hamburger">
                     <span class="bar"></span>
@@ -61,7 +58,6 @@
                     <p class="welcome-description">Join us in building innovative robots and competing in FIRST Robotics Competition. We're a team of passionate students from Huntsville, Alabama, working together to achieve excellence in engineering and teamwork.</p>
                     <div class="welcome-buttons">
                         <a href="#about" class="btn btn-primary">Learn More</a>
-                        <a href="#contact" class="btn btn-secondary">Camps</a>
                     </div>
                 </div>
                 <div class="welcome-image">
@@ -75,7 +71,7 @@
         <section id="about" class="about">
             <div class="container">
                 <h2 class="section-title">About Critical Hit</h2>
-                <p class="section-description">Our mission is to empower future STEM leaders in Alabama through the FIRST suite of programs. We are FRC Team 10101 - Critical Hit, a rookie team from Huntsville, Alabama, founded in 2025.</p>
+                <p class="section-description">Our mission is to empower future STEM leaders in Alabama through the FIRST suite of programs. We are FRC Team 10101 - Critical Hit, a 2nd year team from Huntsville, Alabama, founded in 2025.</p>
                 
                 <div class="features-grid">
                     <div class="feature-card">
@@ -147,7 +143,7 @@
                             <ul>
                                 <li>laptops for rookie teams through Alabama Jumpstart</li>
                                 <li>Progression of programs that follow students year after year</li>
-                                <li>Camps in underserved areas and local recreation centers</li>
+                                <li>Robotics outreach events in underserved areas and local recreation centers</li>
                                 <li>FLL Explore Dreamlabs Center to spark early curiosity</li>
                             </ul>
                         </div>
@@ -162,28 +158,75 @@
         <section id="robot" class="robot-showcase">
             <div class="container">
                 <h2 class="section-title">Meet Our Robot</h2>
-                <div class="robot-feature">
-                    <div class="robot-content">
-                        <h3>Whoops Y Daisy</h3>
-                        <p>Meet our latest competition robot, designed and built for the 2024 FRC season. Whoops Y Daisy highlights our team's engineering prowess with a brand-new funnel stage that keeps chorals flowing to the scorer.</p>
-                        <div class="robot-specs">
-                            <div class="spec-item">
-                                <h4>Whoops - Our Swerve Drivetrain</h4>
-                                <p>Swerve drive for maximum maneuverability</p>
+
+                <div class="robot-selector" aria-label="Robot season cards">
+                    <div class="robot-card-rail" role="tablist" aria-label="Robot seasons">
+                        <button id="robot-2026-tab" class="robot-card active" type="button" role="tab" aria-selected="true" aria-controls="robot-2026" data-robot-target="robot-2026">
+                            <span class="robot-card-year">2026</span>
+                            <h3>Waka Waka</h3>
+                            <p>Our newest build for the 2026 season, tuned for faster cycles and cleaner scoring consistency.</p>
+                        </button>
+
+                        <button id="robot-2025-tab" class="robot-card" type="button" role="tab" aria-selected="false" aria-controls="robot-2025" data-robot-target="robot-2025">
+                            <span class="robot-card-year">2025</span>
+                            <h3>Whoops Y Daisy</h3>
+                            <p>Our 2025 robot with a swerve drivetrain, funnel stage, and end effector for reliable scoring.</p>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="robot-panels">
+                    <article class="robot-panel active" id="robot-2026" role="tabpanel" aria-labelledby="robot-2026-tab">
+                        <div class="robot-feature">
+                            <div class="robot-content">
+                                <h3>Waka Waka</h3>
+                                <p>This is our current season robot. It represents our 2026 build focused on consistency, speed, and reliable game piece handling.</p>
+                                <div class="robot-specs">
+                                    <div class="spec-item">
+                                        <h4>WoWoWoWo - Drive Base</h4>
+                                        <p>Designed for quick movement and strong defense across the field.</p>
+                                    </div>
+                                    <div class="spec-item">
+                                        <h4>Clyde - Launcher</h4>
+                                        <p>Our 3-column launcher uses 3 motors to launch 3 FUEL at once.</p>
+                                    </div>
+                                    <div class="spec-item">
+                                        <h4>PacMan - Intake</h4>
+                                        <p>Our 21" intake uses grip rollers on an over the bumer system to intake FUEL from the ground.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="spec-item">
-                                <h4>Y - Our Funnel</h4>
-                                <p>Guides chorals into Daisy, staging them for consistent scoring runs</p>
-                            </div>
-                            <div class="spec-item">
-                                <h4>Daisy - Our End Effector</h4>
-                                <p>Scores choral and has a beam break to detect when a choral is loaded</p>
+                            <div class="robot-visual">
+                                <img src="images/wakawaka.jpg" alt="2026 Robot" class="robot-showcase-image">
                             </div>
                         </div>
-                    </div>
-                    <div class="robot-visual">
-                        <img src="images/robot.png" alt="Whoops Y Daisy Robot" class="robot-showcase-image">
-                    </div>
+                    </article>
+
+                    <article class="robot-panel" id="robot-2025" role="tabpanel" aria-labelledby="robot-2025-tab">
+                        <div class="robot-feature">
+                            <div class="robot-content">
+                                <h3>Whoops Y Daisy</h3>
+                                <p>Meet our 2025 competition robot, designed around a brand-new funnel stage that kept game pieces flowing to the scorer.</p>
+                                <div class="robot-specs">
+                                    <div class="spec-item">
+                                        <h4>Whoops - Our Swerve Drivetrain</h4>
+                                        <p>Swerve drive for maximum maneuverability</p>
+                                    </div>
+                                    <div class="spec-item">
+                                        <h4>Y - Our Funnel</h4>
+                                        <p>Guides game pieces into Daisy, staging them for consistent scoring runs</p>
+                                    </div>
+                                    <div class="spec-item">
+                                        <h4>Daisy - Our End Effector</h4>
+                                        <p>Scores game pieces and uses a beam break to detect when one is loaded</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="robot-visual">
+                                <img src="images/robot.png" alt="Whoops Y Daisy Robot" class="robot-showcase-image">
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -205,11 +248,11 @@
                         <div class="stat-label">Rookie Year</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">2</div>
+                        <div class="stat-number">4</div>
                         <div class="stat-label">Regional Events</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">2</div>
+                        <div class="stat-number">5</div>
                         <div class="stat-label">Awards Won</div>
                     </div>
                 </div>
@@ -381,6 +424,16 @@
                     
                     <div class="member-card">
                         <div class="member-image">
+                            <img src="images/Alex.png" alt="Alex">
+                        </div>
+                        <div class="member-info">
+                            <h4 class="member-name">Alex</h4>
+                            <p class="member-role">Mechanical</p>
+                        </div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-image">
                             <img src="images/Ansley.jpg" alt="Ansley">
                         </div>
                         <div class="member-info">
@@ -471,15 +524,6 @@
                     </div>
                     <div class="member-card">
                         <div class="member-image">
-                            <img src="images/Matthew.jpg" alt="Matthew">
-                        </div>
-                        <div class="member-info">
-                            <h4 class="member-name">Matthew</h4>
-                            <p class="member-role">Mechanical</p>
-                        </div>
-                    </div>
-                    <div class="member-card">
-                        <div class="member-image">
                             <img src="images/Maxwell.jpg" alt="Maxwell">
                         </div>
                         <div class="member-info">
@@ -527,29 +571,32 @@
 
         <section id="achievements" class="achievements">
             <div class="container">
-                <h2 class="section-title">Our Achievements</h2>
-                <p class="section-description">Recognition of our team's dedication, innovation, and competitive excellence in our rookie season.</p>
-                
+                <h2 class="section-title">Our Achievements</h2>                
                 <div class="achievements-grid">
                     <div class="achievement-card">
                         <div class="achievement-year">2025</div>
-                        <h4>Rookie All Star Award</h4>
-                        <p>Arkansas Regional - Recognized for outstanding performance and sportsmanship in our inaugural competition season.</p>
+                        <h4>Rookie All-Star Award</h4>
+                        <p>Celebrates the rookie team exemplifying a strong partnership effort and the mission of FIRST to inspire students to learn more about science and technology.</p>
                     </div>
                     <div class="achievement-card">
                         <div class="achievement-year">2025</div>
                         <h4>Rising All-Star Award</h4>
-                        <p>Smoky Mountains Regional - Acknowledged for exceptional improvement and team spirit throughout the competition.</p>
+                        <p>Celebrates the team that has persisted through challenges, despite the difficulties of being young. This could be the result of being a new team, or a team with recent turnover in membership.</p>
                     </div>
                     <div class="achievement-card">
-                        <div class="achievement-year">2025</div>
-                        <h4>Regional Playoffs</h4>
-                        <p>Competed in elimination rounds at both Arkansas and Smoky Mountains Regionals as rookie team.</p>
+                        <div class="achievement-year">2026</div>
+                        <h4>Engineering Inspiration Award</h4>
+                        <p>Celebrates a team who demonstrates outstanding success in advancing respect and appreciation for engineering within a team's school, organization, and community.</p>
                     </div>
                     <div class="achievement-card">
-                        <div class="achievement-year">2025</div>
-                        <h4>Alliance Captain</h4>
-                        <p>Arkansas Regional - Selected as Alliance 8 Captain, demonstrating strong robot performance and leadership.</p>
+                        <div class="achievement-year">2026</div>
+                        <h4>Gracious Professionalism Award</h4>
+                        <p>Celebrates outstanding demonstration of FIRST Core Values such as continuous Gracious Professionalism, sportsmanship, and working together both on and off the playing field.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-year">2026</div>
+                        <h4>FIRST Leadership Award</h4>
+                        <p>Recognizes outstanding passionate student leaders who demonstrate exemplary effectiveness at attaining FIRST ideals.</p>
                     </div>
                 </div>
             </div>
@@ -564,60 +611,69 @@
 
                 <div class="sponsors-grid">
                     <article class="sponsor-card">
-                        <h3 class="sponsor-name">DOD-STEM</h3>
-                        <p class="sponsor-support">Supporting national STEM talent development through strategic education initiatives.</p>
-                    </article>
-                    <article class="sponsor-card">
-                        <h3 class="sponsor-name">Leidos</h3>
-                        <p class="sponsor-support">Advancing technology and engineering with a focus on innovation and community impact.</p>
-                    </article>
-                    <article class="sponsor-card">
-                        <h3 class="sponsor-name">Lockheed Martin</h3>
-                        <p class="sponsor-support">Championing aerospace innovation and investing in hands-on STEM experiences.</p>
-                    </article>
-                    <article class="sponsor-card">
-                        <h3 class="sponsor-name">PPG Foundation</h3>
-                        <p class="sponsor-support">Empowering students with resources that spark creativity in science and technology.</p>
-                    </article>
-                    <article class="sponsor-card">
+                        <img src="images/Companies/Boeing.jpeg" alt="Boeing logo" class="sponsor-logo">
                         <h3 class="sponsor-name">Boeing</h3>
-                        <p class="sponsor-support">Fueling the next generation of engineers through mentorship and STEM funding.</p>
+                        <p class="sponsor-support">Boeing is a leading global aerospace company and top U.S. exporter that develops, manufactures, and services commercial airplanes, defense products, and space systems for customers in more than 150 countries.</p>
+                    </article>
+                    <article class="sponsor-card">
+                        <img src="images/Companies/DODSTEM.png" alt="DoD STEM logo" class="sponsor-logo">
+                        <h3 class="sponsor-name">DoDSTEM</h3>
+                        <p class="sponsor-support">DoD STEM supports hands-on learning opportunities, teacher enrichment, scholarships, internships, and fellowships to inspire and cultivate exceptional STEM talent.</p>
+                    </article>
+                    <article class="sponsor-card">
+                        <img src="images/Companies/PrecisionMD.png" alt="PrecisionMD logo" class="sponsor-logo">
+                        <h3 class="sponsor-name">PrecisionMD</h3>
+                        <p class="sponsor-support">PrecisionMD Wellness and Weight Loss is a physician-led medical clinic providing personalized weight loss and hormone therapy care across North Alabama.</p>
+                    </article>
+                    <article class="sponsor-card">
+                        <img src="images/Companies/ArgosyFoundation.png" alt="Argosy Foundation logo" class="sponsor-logo">
+                        <h3 class="sponsor-name">Argosy Foundation</h3>
+                        <p class="sponsor-support">The Argosy Foundation supports people and programs that make society a better place to live through creative, entrepreneurial, and capacity-building approaches.</p>
+                    </article>
+                    <article class="sponsor-card">
+                        <img src="images/Companies/PPG.png" alt="PPG logo" class="sponsor-logo">
+                        <h3 class="sponsor-name">PPG</h3>
+                        <p class="sponsor-support">PPG's purpose is to protect and beautify the world through innovative paints, coatings, and specialty products across global industries.</p>
+                    </article>
+                    <article class="sponsor-card">
+                        <img src="images/Companies/Glovia.png" alt="GLOVIA logo" class="sponsor-logo">
+                        <h3 class="sponsor-name">GLOVIA</h3>
+                        <p class="sponsor-support">GLOVIA is one of the most well known single-source suppliers of safety equipment, tools, and materials in Alabama, Georgia, Tennessee, Michigan, and Indiana.</p>
+                    </article>
+                    <article class="sponsor-card">
+                        <img src="images/Companies/JTEC.png" alt="JTEC Consulting logo" class="sponsor-logo">
+                        <h3 class="sponsor-name">JTEC Consulting</h3>
+                        <p class="sponsor-support">A veteran-owned small business and trusted technical partner for U.S. Department of Defense and Intelligence Community agencies, delivering mission-focused people and technologies.</p>
+                    </article>
+                    <article class="sponsor-card">
+                        <img src="images/Companies/MadisonStreetFestival.jpeg" alt="Madison Street Festival logo" class="sponsor-logo">
+                        <h3 class="sponsor-name">Madison Street Festival</h3>
+                        <p class="sponsor-support">A 501(c)(3) organization focused on motivating and supporting students of all ages through access to education, educational grants, and community literacy programs.</p>
+                    </article>
+                    <article class="sponsor-card">
+                        <img src="images/Companies/GeneHAASFoundation.jpeg" alt="Gene Haas Foundation logo" class="sponsor-logo">
+                        <h3 class="sponsor-name">Gene Haas Foundation</h3>
+                        <p class="sponsor-support">The Gene Haas Foundation supports manufacturing education by introducing and training students in CNC machining and technical career pathways.</p>
+                    </article>
+                    <article class="sponsor-card">
+                        <img src="images/Companies/NationalSpaceClub.jpeg" alt="National Space Club logo" class="sponsor-logo">
+                        <h3 class="sponsor-name">National Space Club</h3>
+                        <p class="sponsor-support">National Space Club Huntsville is a nonprofit association devoted to excellence in space activity through collaboration between industry and government, plus continuing educational support for students.</p>
+                    </article>
+                    <article class="sponsor-card">
+                        <img src="images/Companies/Leidos.jpeg" alt="Leidos logo" class="sponsor-logo">
+                        <h3 class="sponsor-name">Leidos</h3>
+                        <p class="sponsor-support">Leidos delivers cutting-edge defense technology, lifesaving health solutions, and critical infrastructure capabilities to help customers outsmart and outdo complex missions.</p>
+                    </article>
+                    <article class="sponsor-card">
+                        <img src="images/Companies/FIRST.png" alt="FIRST logo" class="sponsor-logo">
+                        <h3 class="sponsor-name">FIRST</h3>
+                        <p class="sponsor-support">FIRST is the world's leading youth robotics community, delivering hands-on STEM learning that inspires innovation, builds confidence, and prepares young people for life.</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <div class="section-divider"></div>
-
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2 class="section-title">Camps</h2>
-
-                <div class="camps-card">
-                    <img src="images/camp.png" alt="Camps Flyer" class="flyer-image">
-                </div>
-
-                <div class="camps-signup">
-                    <a href="https://docs.google.com/forms/d/1uTingKgEQun89p4-lDwwsIKsXqkKoOa3fSRQ6zW--EE" class="btn btn-primary">Sign Up for the Camp</a>
-                </div>
-
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <h4>Meeting Times</h4>
-                        <p>Tuesdays and Thursdays<br>
-                        6:00 PM - 9:00 PM</p>
-                    </div>
-                    <div class="contact-item">
-                        <h4>Location</h4>
-                        <p>South Huntsville, Alabama</p>
-                    </div>
-                    <div class="contact-item">
-                        <h4>Contact</h4>
-                        <p>Email: info@crithitrobotics.org</p>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer class="footer">
@@ -635,7 +691,6 @@
                         <li><a href="#robot">Our Robot</a></li>
                         <li><a href="#team">Team</a></li>
                         <li><a href="#achievements">Achievements</a></li>
-                        <li><a href="#contact">Camps</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -651,11 +706,18 @@
                     <h4>Partners</h4>
                     <div class="sponsors">
                         <ul>
-                            <li><a href="https://dodstem.us" target="_blank" rel="noopener" aria-label="DOD-STEM">DOD-STEM</a></li>
-                            <li><a href="https://www.leidos.com" target="_blank" rel="noopener" aria-label="Leidos">Leidos</a></li>
-                            <li><a href="https://www.lockheedmartin.com" target="_blank" rel="noopener" aria-label="Lockheed Martin">Lockheed Martin</a></li>
-                            <li><a href="https://www.ppg.com/en-US/community-impact" target="_blank" rel="noopener" aria-label="PPG Foundation">PPG Foundation</a></li>
-                            <li><a href="https://www.boeing.com" target="_blank" rel="noopener" aria-label="Boeing">Boeing</a></li>
+                            <li><a href="https://www.boeing.com/" target="_blank" rel="noopener" aria-label="Boeing">Boeing</a></li>
+                            <li><a href="https://dowstem.us/" target="_blank" rel="noopener" aria-label="DoDSTEM">DoDSTEM</a></li>
+                            <li><a href="https://precisionmdwellness.com/" target="_blank" rel="noopener" aria-label="PrecisionMD">PrecisionMD</a></li>
+                            <li><a href="https://www.argosyfnd.org/" target="_blank" rel="noopener" aria-label="Argosy Foundation">Argosy Foundation</a></li>
+                            <li><a href="https://www.ppg.com/en-US" target="_blank" rel="noopener" aria-label="PPG">PPG</a></li>
+                            <li><a href="https://www.glovemoa.com/" target="_blank" rel="noopener" aria-label="GLOVIA">GLOVIA</a></li>
+                            <li><a href="https://www.jtec-consulting.com/" target="_blank" rel="noopener" aria-label="JTEC Consulting">JTEC Consulting</a></li>
+                            <li><a href="https://madisonstreetfestival.org/" target="_blank" rel="noopener" aria-label="Madison Street Festival">Madison Street Festival</a></li>
+                            <li><a href="https://www.ghaasfoundation.org/" target="_blank" rel="noopener" aria-label="Gene Haas Foundation">Gene Haas Foundation</a></li>
+                            <li><a href="https://www.spaceclubhsv.org/" target="_blank" rel="noopener" aria-label="National Space Club Huntsville">National Space Club</a></li>
+                            <li><a href="https://www.leidos.com/" target="_blank" rel="noopener" aria-label="Leidos">Leidos</a></li>
+                            <li><a href="https://www.firstinspires.org/" target="_blank" rel="noopener" aria-label="FIRST">FIRST</a></li>
                         </ul>
                     </div>
                 </div>
